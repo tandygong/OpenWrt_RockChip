@@ -39,11 +39,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      
 
     - name: Initialization Environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        ls
         echo -e "Total CPU cores\t: $(nproc)"
         cat /proc/cpuinfo | grep 'model name'
         free -h
